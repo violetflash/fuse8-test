@@ -1,0 +1,17 @@
+.filter {
+  padding-bottom: 45px;
+
+  &__label-text {
+    margin-right: 12px;
+    font-weight: 700;
+  }
+
+  &__input {
+    height: 50px;
+    border: 1px solid $borderColor;
+    border-radius: 25px;
+    max-width: 418px;
+    width: 100%;
+    padding: 0 25px;
+  }
+}

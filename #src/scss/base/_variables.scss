@@ -1,0 +1,23 @@
+// цвета сайта
+
+$mainColor: #363636;
+$titleColor: #45852d;
+$borderColor: #d8d8d8;
+$cardBg: #f8f8f8;
+$independentLabel: #006f79;
+$white: #fff;
+$mainColor-hover: rgba(#363636, 0.7);
+$mainColor-light: rgba(#363636, 0.5);
+$white: #fff;
+$error: rgba(#f00, 0.8);
+$valid: rgba(green, 0.8);
+
+// <Шрифт по умолчанию>========================
+$fontFamily: "OpenSans", sans-serif;
+
+// <Переменные контейнера>=====================
+$maxWidthContainer: 1210;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
