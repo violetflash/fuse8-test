@@ -64,7 +64,7 @@ const makeHouseCard = ({title, price, type, address}, index) => {
     // console.log(typeClass);
 
     return `
-        <article class='${cardClass}'>
+        <a class='${cardClass}' href="#">
             <div class="house-card__wrapper">
                 <div class="house-card__content">
                     <header class="house-card__header">
@@ -84,7 +84,7 @@ const makeHouseCard = ({title, price, type, address}, index) => {
                         Shared Ownership Available
                 </footer>
             </div>
-        </article>
+        </a>
     `
 };
 
