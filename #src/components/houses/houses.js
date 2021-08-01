@@ -89,7 +89,7 @@ const makeHouseCard = ({title, price, type, address}, index) => {
 };
 
 
-const renderHouses = (root, data, searchTerm) => {
+const renderHouses = (root, data, searchTerm = '') => {
     let houses = data;
 
     if (searchTerm.length > 2) {
