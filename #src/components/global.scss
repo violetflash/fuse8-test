@@ -19,28 +19,6 @@
   font-size: 16px;
 }
 
-.ibg {
-  position: relative;
-  z-index: -1;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &--contain {
-    background-size: contain;
-  }
-}
-
 //lock body
 .js-locked {
   overflow: hidden;
@@ -58,8 +36,6 @@
 .valid {
   border: 1px solid $valid !important;
 }
-
-
 
 //scrolling
 

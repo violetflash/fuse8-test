@@ -139,28 +139,6 @@ body.js-overflow {
   font-size: 16px;
 }
 
-.ibg {
-  position: relative;
-  z-index: -1;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.ibg img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.ibg--contain {
-  background-size: contain;
-}
-
 .js-locked {
   overflow: hidden;
 }
@@ -377,6 +355,10 @@ body.js-overflow {
   padding: 0 25px;
 }
 
+.houses {
+  padding-bottom: 77px;
+}
+
 .houses__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -384,12 +366,62 @@ body.js-overflow {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-left: -22px;
+  margin-bottom: 60px;
 }
 
 .houses__house {
   -ms-flex-preferred-size: calc((100% - 66px) / 3);
   flex-basis: calc((100% - 66px) / 3);
   margin: 0 0 38px 22px;
+}
+
+.houses__link-wrapper {
+  text-align: center;
+}
+
+.houses__link {
+  display: inline-block;
+  min-width: 150px;
+  padding: 12px 10px;
+  border-radius: 25px;
+  border: 1px solid #d8d8d8;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.houses__link span {
+  position: relative;
+  padding-right: 15px;
+}
+
+.houses__link span::after {
+  content: "";
+  width: 10px;
+  height: 15px;
+  top: 1px;
+  right: 0;
+  position: absolute;
+  background-image: url("../images/svgSprite.svg#Chevron");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.houses__link:hover {
+  border-color: #000;
+}
+
+.houses__link:hover span::after {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 .house-card {

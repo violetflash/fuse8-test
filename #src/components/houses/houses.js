@@ -26,23 +26,51 @@ const beautifyPrice = (price) => {
     return price;
 }
 
-const makeHouseCard = ({title, price, type, address}) => {
+const makeHouseCard = ({title, price, type, address}, index) => {
+
+    let cardCounter = 6;
+    let src = '#';
+
+    if (document.body.clientWidth < 1200) {
+        cardCounter = 4;
+    }
+
+    if (document.body.clientWidth < 650) {
+        cardCounter = 2;
+    }
+
+    if (index < cardCounter) {
+        src = 'https://source.unsplash.com/400x300/?house';
+    }
+
+    // const cardCounter = document.body.clientWidth < 650 ? 2 :
+    //     document.body.clientWidth < 1200 ? 4
+    //         : 6
+
+
     let typeClass = 'house-card__label ';
     if (type === "SupportAvailable") {
         typeClass = 'house-card__label-orange';
     }
 
+    let cardClass = 'houses__house house-card';
+    if (index >= cardCounter) {
+        cardClass = 'houses__house house-card scroll-element js-scroll fade-in-bottom';
+    }
+
+    // const src = '#';
+
     // typeClass = typeClass.toString().replace(/,/g, ' ')
     // console.log(typeClass);
 
     return `
-        <article class="houses__house house-card">
+        <article class='${cardClass}'>
             <div class="house-card__wrapper">
                 <div class="house-card__content">
                     <header class="house-card__header">
                         <figure class="house-card__figure">
-                            <img class="house-card__img" src="https://source.unsplash.com/400x300/?house"
-                                 alt="house footer sale">
+                            <img id="lazy-img" class="house-card__img" data-src="https://source.unsplash.com/400x300/?house" src="${src}"
+                                 alt="${title}" loading="lazy">
                             <span class=${typeClass}>${type}</span>
                         </figure>
                     </header>
@@ -71,8 +99,8 @@ const renderHouses = (root, data, searchTerm) => {
         })
     }
 
-    houses.forEach((elem) => {
-        root.insertAdjacentHTML('beforeend', makeHouseCard(elem));
+    houses.forEach((elem, index) => {
+        root.insertAdjacentHTML('beforeend', makeHouseCard(elem, index));
     });
 }
 
