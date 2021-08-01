@@ -1,9 +1,7 @@
 .houses {
-
   &__list {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
     margin-left: -22px;
   }
 
@@ -24,6 +22,7 @@
 .house-card {
   background-color: $cardBg;
   border: 1px solid $borderColor;
+  min-height: 100%;
 
   &__figure {
     position: relative;
@@ -46,21 +45,53 @@
     padding: 8px 10px;
     color: $white;
     background-color: $independentLabel;
+
+    &--orange {
+      background-color: $supportLabel;
+    }
   }
 
-  &__wrapper {
+  &__label-orange {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 8px 10px;
+    color: $white;
+    background-color: $supportLabel;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    margin-bottom: 10px;
     padding: 20px 20px 17px;
   }
 
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
   &__content {
-    margin-bottom: 10px;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    min-height: 100%;
   }
 
   &__title {
+    flex-grow: 1;
     margin-bottom: 5px;
   }
 
   &__address {
     margin-bottom: 15px;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+    padding: 0 20px 17px;
   }
 }

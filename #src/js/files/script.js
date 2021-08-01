@@ -1,2 +1,3 @@
-@@include('../../components/header/header.js', {})
+@@include('../../components/houses/houses.js', {})
+@@include('../../components/filter/filter.js', {})
 
