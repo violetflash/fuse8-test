@@ -62,10 +62,16 @@ const makeHouseCard = ({
 };
 
 const renderHouses = (root, data, searchTerm) => {
-  data.filter(elem => {
-    const regex = new RegExp(searchTerm, 'i');
-    return regex.test(elem.title);
-  }).forEach(elem => {
+  let houses = data;
+
+  if (searchTerm.length > 2) {
+    houses = data.filter(elem => {
+      const regex = new RegExp(searchTerm, 'i');
+      return regex.test(elem.title);
+    });
+  }
+
+  houses.forEach(elem => {
     root.insertAdjacentHTML('beforeend', makeHouseCard(elem));
   });
 };
@@ -107,7 +113,7 @@ const getCookie = name => {
   return matches ? decodeURIComponent(matches[1]) : undefined;
 };
 
-const render = searchTerm => {
+const render = (searchTerm = '') => {
   if (!getCookie('houses')) {
     setCookie('houses', true, {
       secure: true,
@@ -125,8 +131,8 @@ render();
 const filter = document.getElementById('filter');
 
 const filterHandler = e => {
-  const target = e.target;
-  console.log(target.value);
+  const target = e.target; // if (target.value.length < 3) return;
+
   root.innerHTML = '';
   render(target.value);
 };

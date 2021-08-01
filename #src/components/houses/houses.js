@@ -61,13 +61,17 @@ const makeHouseCard = ({title, price, type, address}) => {
 };
 
 
-
 const renderHouses = (root, data, searchTerm) => {
+    let houses = data;
 
-    data.filter((elem) => {
-        const regex = new RegExp(searchTerm, 'i');
-        return regex.test(elem.title);
-    }).forEach((elem) => {
+    if (searchTerm.length > 2) {
+        houses = data.filter((elem) => {
+            const regex = new RegExp(searchTerm, 'i');
+            return regex.test(elem.title);
+        })
+    }
+
+    houses.forEach((elem) => {
         root.insertAdjacentHTML('beforeend', makeHouseCard(elem));
     });
 }
@@ -112,7 +116,7 @@ const getCookie = (name) => {
     return matches ? decodeURIComponent(matches[1]) : undefined;
 };
 
-const render = (searchTerm) => {
+const render = (searchTerm = '') => {
     if (!getCookie('houses')) {
         setCookie('houses', true, {secure: true, 'max-age': 3600}); //на 1 час
         getData();
