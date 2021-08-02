@@ -1,3 +1,11 @@
+<div>
+    <img width="360" height="300" src="https://i.ibb.co/37SkkFR/lighthouse.png">
+</div>
+localStorage + Cookies + onScroll lazyLoading
+
+
+
+
 # fuse8-test
 Тестовое задание frontend developer
 
