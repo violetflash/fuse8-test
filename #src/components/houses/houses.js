@@ -4,7 +4,7 @@ const fetchData = (url) => {
     return fetch(url)
         .then((response) => {
             if (!response.ok) {
-                throw response
+                throw new Error(`could not fetch ${url}, received ${response.status}`);
             }
             return response.json();
         })
