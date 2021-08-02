@@ -87,6 +87,14 @@ const renderHouses = (root, data, searchTerm = '') => {
             const regex = new RegExp(searchTerm, 'i');
             return regex.test(elem.title);
         })
+
+        if (houses.length === 0) {
+            console.log('empty');
+            root.insertAdjacentHTML('beforeend', `
+                <p class="houses__no-match"><em>No match was found for the specified search criteria...</em></p>
+            `);
+            return;
+        }
     }
 
     houses.forEach((elem, index) => {

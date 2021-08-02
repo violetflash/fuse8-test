@@ -1,12 +1,17 @@
 .houses {
   padding-bottom: 77px;
 
-
   &__list {
     display: flex;
     flex-wrap: wrap;
     margin-left: -22px;
     margin-bottom: 60px;
+  }
+
+  &__no-match {
+    width: 100%;
+    text-align: center;
+    margin-left: 22px;
   }
 
   &__house {

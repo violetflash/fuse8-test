@@ -41,10 +41,7 @@ const makeHouseCard = ({
 
   if (index < cardCounter) {
     src = 'https://source.unsplash.com/400x300/?house';
-  } // const cardCounter = document.body.clientWidth < 650 ? 2 :
-  //     document.body.clientWidth < 1200 ? 4
-  //         : 6
-
+  }
 
   let typeClass = 'house-card__label ';
 
@@ -56,10 +53,7 @@ const makeHouseCard = ({
 
   if (index >= cardCounter) {
     cardClass = 'houses__house house-card scroll-element js-scroll fade-in-bottom';
-  } // const src = '#';
-  // typeClass = typeClass.toString().replace(/,/g, ' ')
-  // console.log(typeClass);
-
+  }
 
   return `
         <a class='${cardClass}' href="#">
@@ -94,6 +88,14 @@ const renderHouses = (root, data, searchTerm = '') => {
       const regex = new RegExp(searchTerm, 'i');
       return regex.test(elem.title);
     });
+
+    if (houses.length === 0) {
+      console.log('empty');
+      root.insertAdjacentHTML('beforeend', `
+                <p class="houses__no-match"><em>No match was found for the specified search criteria...</em></p>
+            `);
+      return;
+    }
   }
 
   houses.forEach((elem, index) => {
@@ -157,8 +159,7 @@ const filter = document.getElementById('filter');
 let scrollElements = document.querySelectorAll('.js-scroll');
 
 const filterHandler = e => {
-  const target = e.target; // if (target.value.length < 3) return;
-
+  const target = e.target;
   root.innerHTML = '';
   render(target.value);
   scrollElements = document.querySelectorAll('.js-scroll');
