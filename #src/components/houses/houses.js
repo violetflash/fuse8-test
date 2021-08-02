@@ -107,8 +107,8 @@ const renderHouses = (root, data, searchTerm = '') => {
 const getData = async () => {
     const data = await fetchData('https://603e38c548171b0017b2ecf7.mockapi.io/homes');
     localStorage.setItem('houses', JSON.stringify(data));
-    console.log(data);
     renderHouses(root, data);
+    scrollElements = document.querySelectorAll('.js-scroll');
 }
 
 const setCookie = (name, value, options = {}) => {

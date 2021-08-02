@@ -1,5 +1,5 @@
 const filter = document.getElementById('filter');
-let scrollElements;
+let scrollElements = document.querySelectorAll('.js-scroll');
 
 const filterHandler = (e) => {
     const target = e.target;

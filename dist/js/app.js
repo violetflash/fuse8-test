@@ -86,7 +86,7 @@ const makeHouseCard = ({
     `;
 };
 
-const renderHouses = (root, data, searchTerm) => {
+const renderHouses = (root, data, searchTerm = '') => {
   let houses = data;
 
   if (searchTerm.length > 2) {
@@ -104,8 +104,8 @@ const renderHouses = (root, data, searchTerm) => {
 const getData = async () => {
   const data = await fetchData('https://603e38c548171b0017b2ecf7.mockapi.io/homes');
   localStorage.setItem('houses', JSON.stringify(data));
-  console.log(data);
   renderHouses(root, data);
+  scrollElements = document.querySelectorAll('.js-scroll');
 };
 
 const setCookie = (name, value, options = {}) => {
@@ -154,7 +154,7 @@ const render = (searchTerm = '') => {
 
 render();
 const filter = document.getElementById('filter');
-let scrollElements;
+let scrollElements = document.querySelectorAll('.js-scroll');
 
 const filterHandler = e => {
   const target = e.target; // if (target.value.length < 3) return;
