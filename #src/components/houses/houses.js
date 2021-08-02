@@ -43,11 +43,6 @@ const makeHouseCard = ({title, price, type, address}, index) => {
         src = 'https://source.unsplash.com/400x300/?house';
     }
 
-    // const cardCounter = document.body.clientWidth < 650 ? 2 :
-    //     document.body.clientWidth < 1200 ? 4
-    //         : 6
-
-
     let typeClass = 'house-card__label ';
     if (type === "SupportAvailable") {
         typeClass = 'house-card__label-orange';
@@ -57,11 +52,6 @@ const makeHouseCard = ({title, price, type, address}, index) => {
     if (index >= cardCounter) {
         cardClass = 'houses__house house-card scroll-element js-scroll fade-in-bottom';
     }
-
-    // const src = '#';
-
-    // typeClass = typeClass.toString().replace(/,/g, ' ')
-    // console.log(typeClass);
 
     return `
         <a class='${cardClass}' href="#">

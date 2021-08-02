@@ -19,24 +19,6 @@
   font-size: 16px;
 }
 
-//lock body
-.js-locked {
-  overflow: hidden;
-}
-
-.error {
-  border: 1px solid $error !important;
-}
-
-.err-animated {
-  transition: all 0.3s;
-  animation: err 0.4s;
-}
-
-.valid {
-  border: 1px solid $valid !important;
-}
-
 //scrolling
 
 .js-scroll {
@@ -114,9 +96,11 @@
   0% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(10px);
   }
+
   100% {
     transform: translateX(0);
   }

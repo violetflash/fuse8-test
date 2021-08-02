@@ -4,7 +4,6 @@ let scrollElements = document.querySelectorAll('.js-scroll');
 const filterHandler = (e) => {
     const target = e.target;
 
-    // if (target.value.length < 3) return;
     root.innerHTML = '';
     render(target.value);
     scrollElements = document.querySelectorAll('.js-scroll');
