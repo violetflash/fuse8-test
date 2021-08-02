@@ -45,7 +45,7 @@ const makeHouseCard = ({title, price, type, address}, index) => {
 
     let typeClass = 'house-card__label ';
     if (type === "SupportAvailable") {
-        typeClass = 'house-card__label-orange';
+        typeClass = 'house-card__label house-card__label--orange';
     }
 
     let cardClass = 'houses__house house-card';
@@ -61,7 +61,7 @@ const makeHouseCard = ({title, price, type, address}, index) => {
                         <figure class="house-card__figure">
                             <img id="lazy-img" class="house-card__img" data-src="https://source.unsplash.com/400x300/?house" src="${src}"
                                  alt="${title}" loading="lazy">
-                            <span class=${typeClass}>${type}</span>
+                            <span class="${typeClass}">${type}</span>
                         </figure>
                     </header>
                     <section class="house-card__body">

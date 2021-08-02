@@ -107,15 +107,6 @@
     }
   }
 
-  &__label-orange {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 8px 10px;
-    color: $white;
-    background-color: $supportLabel;
-  }
-
   &__body {
     display: flex;
     flex: 1 0 auto;

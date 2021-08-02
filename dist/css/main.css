@@ -453,15 +453,6 @@ body.js-overflow {
   background-color: #ec6608;
 }
 
-.house-card__label-orange {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 8px 10px;
-  color: #fff;
-  background-color: #ec6608;
-}
-
 .house-card__body {
   display: -webkit-box;
   display: -ms-flexbox;
